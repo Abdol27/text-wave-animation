@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="text-wave-animation.css" />
+  </head>
+  <body>
+    <div class="wave">
+      <label>Sayed_M_Abdullah</label>
+    </div>
+    <script>
+      const text = document.querySelectorAll("label");
+      text.forEach(label => {
+        label.innerHTML = label.textContent
+          .split("")
+          .map(
+            (text, wave) =>
+              `<span style="transition-delay: ${wave * 25}ms ">${text}</span>`
+          )
+          .join("");
+      });
+    </script>
+  </body>
+</html>
